@@ -1,9 +1,6 @@
 import os
 
 import dotenv
-
-dotenv.load_dotenv()
-
 from flask import Flask, abort, request
 from linebot.v3 import WebhookHandler
 from linebot.v3.exceptions import InvalidSignatureError
@@ -11,7 +8,7 @@ from linebot.v3.messaging import ApiClient, Configuration, MessagingApi, ReplyMe
 from linebot.v3.webhooks import MessageEvent, TextMessageContent
 
 app = Flask(__name__)
-
+dotenv.load_dotenv()
 configuration = Configuration(access_token=os.getenv('CHANNEL_ACCESS_TOKEN'))
 line_handler = WebhookHandler(os.getenv('CHANNEL_SECRET'))
 
