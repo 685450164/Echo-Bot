@@ -19,6 +19,11 @@ from linebot.v3.webhooks import (
 )
 
 import os
+import dotenv
+
+dotenv.load_dotenv()
+
+# print('結果:' + os.getenv('CHANNEL_ACCESS_TOKEN'))
 
 app = Flask(__name__)
 
